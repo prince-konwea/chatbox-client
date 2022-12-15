@@ -1,13 +1,15 @@
+
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styled from "styled-components";
-import Logo from "../assets/logo.svg";
+import axios from "axios";
 import {ToastContainer, toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import  {registerRoute}  from '../utils/ApiRoutes';
 
 
 function Register() {
-
+  const navigate = useNavigate();
 
 
   const [values, setValues] = useState({
@@ -17,22 +19,52 @@ function Register() {
     confirmPassword: "",
   })
 
-const handleSubmit = e => {
-  e.preventDefault();
-  handleValidation();
+  const toastOptions= {
+    position:"bottom-right",
+    autoClose:8000,
+    pauseOnHover: true,
+    draggable:true,
+    theme:"dark"
+  }
+
+const handleSubmit = async (event)  => {
+  event.preventDefault();
+  if(handleValidation()){
+    const {password, email,username } = values;
+    const {data} = await axios.post(registerRoute, {
+      username,
+      email,
+      password,
+    });
+
+    if(data.status === false){
+      toast.error(data.msg, toastOptions)
+    }
+    if(data.status === true){
+      localStorage.setItem("chat-box-user", JSON.stringify(data.user))
+      navigate("/");
+    }
+    
+  }
 }
 
 const handleValidation = () => {
+  
   const {password, confirmPassword, email,username } = values;
   if(password !== confirmPassword){
-    toast.error("password and confirm password should be same",{
-      position:"bottom-right",
-      autoClose:8000,
-      pauseOnHover: true,
-      draggable:true,
-      theme:"dark"
-    })
-  }
+    toast.error("password and confirm password should be same", toastOptions);
+    return false;
+  } else if(username.length < 3){
+    toast.error("username should be greater than 3 characters", toastOptions);
+    return false;
+  } else if(password.length < 8){
+    toast.error("password should be equal or greater than 8 characters", toastOptions);
+    return false;
+} else if(email === "" ) {
+  toast.error("email is required", toastOptions);
+  return false
+}
+return true;
 }
 
 const handleChange = e => {
@@ -44,13 +76,12 @@ const handleChange = e => {
     <FormContainer>
       <form onSubmit={e => handleSubmit(e)}>
        <div className='brand'>
-        <img src={Logo} alt="logo-img" />
         <h1>ChatBox</h1>
        </div>
  <input type="text" placeholder="username" name='username' onChange={e => handleChange(e)} />
  <input type="email" placeholder="email" name='email' onChange={e => handleChange(e)} />
  <input type="password" placeholder="password" name='password' onChange={e => handleChange(e)} />
- <input type="password" placeholder="confirm password" name='password' onChange={e => handleChange(e)} />
+ <input type="password" placeholder="confirm password" name='confirmPassword' onChange={e => handleChange(e)} />
  <button type='submit'>Create User</button>
  <span>already have an account ? <Link to="/login">Login</Link> </span>
       </form>
