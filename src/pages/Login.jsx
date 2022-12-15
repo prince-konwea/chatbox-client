@@ -26,6 +26,13 @@ function Login() {
     theme:"dark"
   }
 
+useEffect(() => {
+  if(localStorage.getItem("chat-box-user")){
+     navigate("/")
+  }
+}, [])
+
+
 const handleSubmit = async (event)  => {
   event.preventDefault();
   if(handleValidation()){
