@@ -109,7 +109,7 @@ flex-direction:column;
 justify-content:center;
 gap:1rem;
 align-items:center;
-background-color:#131324;
+background-color: rgb(20, 20, 20);
 .brand{
   display:flex;
   align-items:center;
@@ -168,6 +168,13 @@ form{
     text-decoration:none;
     font-weight:bold;
   }
+  @media screen and (min-width:720px) and(max-width:1080px){
+    
+   }
+   @media screen and (min-width:360px) and(max-width:480px){
+     
+   }
+   
 }
 `
 
