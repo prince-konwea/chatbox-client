@@ -98,7 +98,7 @@ flex-direction:column;
 justify-content:center;
 gap:1rem;
 align-items:center;
-background-color: rgb(20, 20, 20);
+background-color: #ffffff;
 .brand{
   display:flex;
   align-items:center;
@@ -117,7 +117,7 @@ form{
   display:flex;
   flex-direction: column;
   gap:2rem;
-  background-color: #00000076;
+  background-color: #000000;
   border-radius:2rem;
   padding: 3rem 5rem;
   input{

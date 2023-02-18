@@ -1,8 +1,8 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import styled from "styled-components";
-import axios from "axios";
 import {  useNavigate } from 'react-router-dom';
-
+import Footer from '../components/Footer';
+import {FaPlus} from "react-icons/fa"
 
 
 
@@ -19,7 +19,7 @@ return (
     <Container>
       <div className='header'>
      <h1>Channels</h1>
-     <button>search</button>
+     <FaPlus />
       </div>
       <div className="container">
      <input type="search" placeholder='search channel....' />
@@ -30,10 +30,7 @@ return (
    
    
     <Main>
-    <div className="input-field">
-    <input type="text" placeholder='Type your message.....' />
-    
-    </div>
+    <Footer />            
     </Main>
     
     </>
@@ -52,7 +49,7 @@ flex-direction:column;
 position: fixed;
 z-index: 1;
 gap:1rem;
-background-color: rgb(20, 20, 20);
+background-color: rgb(20,20,20);
 color: white;
 .container{
  display: flex;
@@ -74,16 +71,8 @@ color: white;
 }
  .header{
   display: flex;
-  gap: 1rem;
-   button{
-    cursor:pointer;
-    padding: 1rem;
-    border-radius: 10px;
-    background-color: green;
-    color: white;
-    font-weight: bold;
-    font-size: 1rem;
-   }
+  justify-content: space-between;
+   
  }
 
 `
@@ -92,21 +81,6 @@ const Main = styled.div`
 height:100vh;
 width:100vw;
 background-color: rgb(51, 49, 49);
- display: flex;
-  justify-content:center;
-  
- input{
-   width:40vw;
-   padding:0.7rem;
-   border-radius: 0.4rem;
-   font-weight: bold;
-   font-size: 1.2rem;
- }
- button{
-  width:3vw;
-  height:5vh
-  color:white;
- }
 `
 
 

@@ -109,7 +109,7 @@ flex-direction:column;
 justify-content:center;
 gap:1rem;
 align-items:center;
-background-color: rgb(20, 20, 20);
+background-color: #ffff;
 .brand{
   display:flex;
   align-items:center;
@@ -119,7 +119,7 @@ background-color: rgb(20, 20, 20);
     height:5rem;
   }
   h1{
-    color:white;
+    color:#ffffff;
     text-transform:uppercase;
   }
   
@@ -128,7 +128,7 @@ form{
   display:flex;
   flex-direction: column;
   gap:2rem;
-  background-color: #00000076;
+  background-color: #000000;
   border-radius:2rem;
   padding: 3rem 5rem;
   input{
