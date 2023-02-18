@@ -134,13 +134,13 @@ form{
   input{
     background-color: transparent;
     padding:1rem;
-    border: 0.1rem solid #4e0eff;
+    border: 0.1rem solid gray;
     border-radius:0.4rem;
     color:white;
     width:100%;
     font-size:1rem;
     &:focus{
-      border:0.1rem solid #997af0;
+      border:0.1rem solid #ffffff;
       outline:none;
     }
   }

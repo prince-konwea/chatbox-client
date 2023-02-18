@@ -1,0 +1,61 @@
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background-color: transparent;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modalContainer {
+    width: 500px;
+    height: 500px;
+    border-radius: 12px;
+    background-color: rgb(20,20,20);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+    gap: 1rem;
+  }
+  
+  .modalContainer .title {
+    display: inline-block;
+    margin-top: 10px;
+    color: #ffffff;
+  }
+.modalContainer input{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+
+}  
+.modalContainer textarea{
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 10px;
+    
+}
+  .titleCloseBtn {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  
+  
+  
+  
+  .modalContainer .footer {
+    flex: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  #saveBtn {
+    background-color: rgb(12, 12, 162);
+    color: white;
+    padding: 20px;
+  }
