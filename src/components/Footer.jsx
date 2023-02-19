@@ -23,6 +23,7 @@ const FootDiv = styled.div`
   right: 0;
   padding: 8px;
   text-align: center;
+  
     input{
         padding: 10px;
         width: 50%;

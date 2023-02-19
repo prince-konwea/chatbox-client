@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import styled from "styled-components";
 import {  useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
-import {FaPlus} from "react-icons/fa"
+import {FaPlus, FaAngleDown} from "react-icons/fa"
 import Modal from "../components/modal/Modal"
 
 
@@ -29,6 +29,12 @@ return (
      <input type="search" placeholder='search channel....' />
      
       </div>
+      <div className='container-foot'>
+        <h2>prince</h2>
+        <div className='plus'>
+          <FaAngleDown />
+        </div>
+      </div>
     </Container>
 
    
@@ -46,7 +52,7 @@ return (
 
 
 const Container = styled.div`
-height:100vh;
+height:100%;
 width:25vw;
 display:flex;
 flex-direction:column;
@@ -91,22 +97,26 @@ color: white;
       background-color: gray;
     }
   }
+  .container-foot{
+    color: #fff;
+    position: fixed;
+  background-color: rgb(20, 20, 20);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+  
+  
+  }
 `
 
 const Main = styled.div`
 height:100vh;
 width:100vw;
 background-color: rgb(51, 49, 49);
-hr {
-  border:none;
-  height: 20px;
- 	width: 90%;
-	height: 50px;
-	margin-top: 0;
-	border-bottom: 1px solid #1f1209;
-	box-shadow: 0 20px 20px -20px #333;
-  margin: -50px auto 10px; 
-}
+
 `
 
 

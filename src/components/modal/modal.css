@@ -25,10 +25,12 @@
     margin-top: 10px;
     color: #ffffff;
   }
-.modalContainer input{
+.modalContainer form input{
     padding: 10px;
     font-size: 20px;
     border-radius: 10px;
+    margin: 10px;
+    
 
 }  
 .modalContainer textarea{
@@ -59,3 +61,10 @@
     color: white;
     padding: 20px;
   }
+
+  .modalContainer form{
+    padding: 10px;
+    gap: 2rem;
+    background-color: rgb(20,20,20);
+  }
+  
