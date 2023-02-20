@@ -3,7 +3,8 @@ import styled from "styled-components";
 import {  useNavigate } from 'react-router-dom';
 import Footer from '../components/Footer';
 import {FaPlus, FaAngleDown} from "react-icons/fa"
-import Modal from "../components/modal/Modal"
+import Modal from "../components/modal/Modal";
+import FootModal from '../components/foot-modal/footModal';
 
 
 
@@ -12,6 +13,7 @@ function Chat() {
 
 const navigate = useNavigate();
 const [openModal, setOpenModal] = useState(false);
+const [openFoot, setOpenFoot] = useState(false)
 
 
 return (
@@ -29,9 +31,10 @@ return (
      <input type="search" placeholder='search channel....' />
      
       </div>
+     { openFoot &&  <FootModal  closeFoot={setOpenFoot}/>}
       <div className='container-foot'>
         <h2>prince</h2>
-        <div className='plus'>
+        <div className='plus' onClick={() => setOpenFoot(true)}>
           <FaAngleDown />
         </div>
       </div>

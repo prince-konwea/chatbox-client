@@ -6,7 +6,8 @@ import {FaPlus} from "react-icons/fa";
 const Footer = () => {
    return(
     <FootDiv>
-       <input type="text" placeholder="Type Messages Here...."   /> <FaPlus />
+       <input type="text" placeholder="Type Messages Here...."   /> 
+       <button>send</button>
     </FootDiv>
    )
 }
@@ -28,7 +29,21 @@ const FootDiv = styled.div`
         padding: 10px;
         width: 50%;
         height: 20%;
-        
+        text-align: center;
+      
         
     }
+
+    button{
+      color: white;
+      padding: 10px;
+      background-color: blue;
+      font-size: 15px;
+      gap: 0.2rem;
+      cursor: pointer;
+      :hover{
+        background-color: blueviolet;
+      }
+    }
+   
 `
